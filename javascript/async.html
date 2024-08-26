@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body class="bg" bgcolor="grey">
+<h1> Background Color Changer</h1>
+<button id="start" onclick="onStart()">Start</button>
+<button id="stop" onclick="onStop()">Stop</button>
+<script>
+
+const getRandomColor = function() {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
+let intervalid;
+const onStart=function(){
+
+const colorChange= function(){
+    document.body.style.backgroundColor=getRandomColor();
+}
+intervalid=setInterval(colorChange,1000);
+
+}
+const onStop=function(){
+    clearInterval(intervalid);
+}
+
+
+</script>
+
+</body>
+</html>
